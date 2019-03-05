@@ -27,9 +27,17 @@ shinyUI(fluidPage(
     ),
     
     # Show a plot of the generated distribution
-    mainPanel(
-      h3("Beta distribution plot"),
-       plotOutput("betaHist")
-    )
+    mainPanel(tabsetPanel(
+      type="tabs",
+      tabPanel(
+        h3("Documentation"),
+        h4("Select the distribution parameters as you like, as it will change accordingly"),
+        h5("Link for the ui.R file is:"),
+        helpText(a("ui.R", href="https://github.com/octavio2507/DataProductsProject/blob/master/ui.R")),
+        h5("Link for the server.R file is:"),
+        helpText(a("server.R", href="https://github.com/octavio2507/DataProductsProject/blob/master/server.R"))),
+      tabPanel(h3("Beta distribution plot"),
+       plotOutput("betaHist"))
+    ))
   )
 ))
